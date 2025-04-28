@@ -1,13 +1,14 @@
 package com.example.meeting_room.model;
 
 import jakarta.persistence.*;
-import java.time.LocalDateTime;
-import java.util.List;
+
+import java.sql.Timestamp;
 
 @Entity
 @Table(name = "zone", schema = "project_test")
-public class zoneTO {
+public class ZoneTO {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Integer id;
 
@@ -17,11 +18,11 @@ public class zoneTO {
     @Column(name = "status", length = 1)
     private String status;
 
-    @Column(name = "create_by", length = 45)
-    private String createBy;
+    @Column(name = "zone_create_by", length = 45)
+    private String zoneCreateBy;
 
-    @Column(name = "create_date", length = 45)
-    private String createDate;
+    @Column(name = "zone_create_dt", length = 45)
+    private Timestamp zoneCreateDt;
 
     public Integer getId() {
         return id;
@@ -47,19 +48,19 @@ public class zoneTO {
         this.status = status;
     }
 
-    public String getCreateBy() {
-        return createBy;
+    public String getZoneCreateBy() {
+        return zoneCreateBy;
     }
 
-    public void setCreateBy(String createBy) {
-        this.createBy = createBy;
+    public void setZoneCreateBy(String zoneCreateBy) {
+        this.zoneCreateBy = zoneCreateBy;
     }
 
-    public String getCreateDate() {
-        return createDate;
+    public Timestamp getZoneCreateDt() {
+        return zoneCreateDt;
     }
 
-    public void setCreateDate(String createDate) {
-        this.createDate = createDate;
+    public void setZoneCreateDt(Timestamp zoneCreateDt) {
+        this.zoneCreateDt = zoneCreateDt;
     }
 }

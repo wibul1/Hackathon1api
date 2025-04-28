@@ -5,9 +5,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface RoomRepository extends JpaRepository<ReserveRoomTO, Integer> {
-    List<ReserveRoomTO> findByZone_IdAndStatus(Integer zoneId, String status); // ค้นหาจาก zoneId และ status
-    List<ReserveRoomTO> findByZone_Id(Integer zoneId); // ค้นหาจาก zoneId อย่างเดียว
+public interface ReserveRoomRepository extends JpaRepository<ReserveRoomTO, Integer> {
+
+    List<ReserveRoomTO> findByRoom_IdAndStatusIn(Integer roomId, List<String> statuses);
+    List<ReserveRoomTO> findByRoomIdInAndStatusIn(List<Integer> roomIds, List<String> statuses);
 }
 
 
