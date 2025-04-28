@@ -1,4 +1,7 @@
 package com.example.meeting_room.repository;
 
-public class ZoneRepository {
+import com.example.meeting_room.model.ZoneTO;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ZoneRepository extends JpaRepository<ZoneTO, Integer> {
 }
